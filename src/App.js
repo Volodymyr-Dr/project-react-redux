@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
-import ProductsList from "./components/ProductsList";
-import ProductDetails from "./components/ProductDetail";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import ProductsList from './components/ProductsList';
+import ProductDetails from './components/ProductDetail';
 import './App.css';
 
 function App() {
@@ -10,8 +11,12 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/project-react-redux/" exact component={ProductsList} />
-          <Route path="/project-react-redux/product/:productId" exact component={ProductDetails} />
+          <Route exact path="/project-react-redux/" component={ProductsList} />
+          <Route
+            path="/project-react-redux/product/:productId"
+            exact
+            component={ProductDetails}
+          />
           <Route>404 Not Found</Route>
         </Switch>
       </Router>

@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   removeSelectedProduct,
   fetchProduct,
-} from "../redux/actions/productAction";
-import { CardDetail, Description, Img, ImgDetail, Price } from "../ui/ui";
+} from '../redux/actions/productAction';
+import { CardDetail, Description, Img, ImgDetail, Price } from '../style/ui';
 
 const ProductDetails = () => {
   const { productId } = useParams();
-  let product = useSelector((state) => state.product);
+  const product = useSelector((state) => state.product);
+  console.log(product);
   const { image, title, price, category, description } = product;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (productId && productId !== "") dispatch(fetchProduct(productId));
+    if (productId && productId !== '') dispatch(fetchProduct(productId));
     return () => {
       dispatch(removeSelectedProduct());
     };

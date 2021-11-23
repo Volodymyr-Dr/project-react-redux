@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProductsField = styled.div`
   display: flex;
@@ -40,8 +40,17 @@ export const Card = styled.div`
   justify-content: space-between;
   transition-duration: 0.5s;
   &:hover {
+    border: none;
     box-shadow: 0 0 15px;
     transform: scale(1.05);
+  }
+  &:hover .button_box {
+    display: flex;
+    justify-content: space-around;
+  }
+  &:hover .content_hover {
+    border-bottom: 1px solid black;
+    border-radius: 0;
   }
 `;
 
@@ -54,6 +63,20 @@ export const Content = styled.div`
   background-color: whitesmoke;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+`;
+
+export const ButtonBox = styled.div`
+  display: none;
+`;
+
+export const Button = styled.button`
+  border: none;
+  width: 35%;
+  height: 1rem;
+  background-color: whitesmoke;
+  &:hover {
+    background-color: ${(props) => (props.red ? '#ff000059' : '#00ff7159')};
+  }
 `;
 
 export const CardTitle = styled.div`
