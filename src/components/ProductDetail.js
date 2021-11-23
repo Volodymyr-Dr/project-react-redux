@@ -5,7 +5,7 @@ import {
   removeSelectedProduct,
   fetchProduct,
 } from "../redux/actions/productAction";
-import { CardDetail, Description, ImgDetail, Price } from "../ui/ui";
+import { CardDetail, Description, Img, ImgDetail, Price } from "../ui/ui";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -26,7 +26,7 @@ const ProductDetails = () => {
       ) : (
         <CardDetail>
           <ImgDetail>
-            <img src={image} />
+            <Img src={image} />
           </ImgDetail>
           <Description>
             <h1>{title}</h1>

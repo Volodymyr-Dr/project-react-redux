@@ -13,9 +13,15 @@ const ProductsList = () => {
   }, []);
   console.log("Products:", products);
   return (
-    <ProductsField>
-      <ProductsItem />
-    </ProductsField>
+    <div>
+      {Object.keys(products.allProducts.products).length === 0 ? (
+        <div>...Loading</div>
+      ) : (
+        <ProductsField>
+          <ProductsItem />
+        </ProductsField>
+      )}
+    </div>
   );
 };
 
